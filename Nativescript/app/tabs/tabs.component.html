@@ -1,0 +1,14 @@
+<TabView>
+    <StackLayout *tabItem="{title: 'News'}" >
+        <ListView [items]="items">
+            <ng-template let-item="item">
+                <Label [text]="item.itemDesc"></Label>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Info'}">        
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Providers'}">
+        <Label text="Third tab item"></Label>
+    </StackLayout>
+</TabView>
