@@ -1,13 +1,45 @@
 <app-header></app-header>
 
 
-<p> Welcome to dashboard, your are logged in. Hello {{ user }} </p>
+  <div *ngIf="items?.length >0; else nItems">
+  	<ul *ngFor="let item of items" class="collection">
+  		<li class="collection-item">
+			<h1>{{ item.title }}</h1> 
+			<br> <b>Description: </b> {{ item.description }}
+			<br> <b>Postedby: </b> {{ item.adminposted }}
+			<br> <b>Datatype: </b> {{ item.datatype }}
+			<br> <b>Who can view: </b> {{ item.permissions }}
+			<br> <b>Posted on: </b> {{ item.time }}
+			<br> <b>Post id: </b> {{ item.id }}
+			<button  (click)="editItem($event, item)" >Edit</button>
+			<button (click)="clearState()"	class="">Hide</button>
 
 
+			<div *ngIf="editState && itemToEdit.id == item.id" >
+				<form (ngSubmit)="updateItem(item)"	>
+					<div class="">
+
+				        <label>Title: </label><div class=""><input type="text" placeholder="edit title" [(ngModel)]="item.title" name="title"></div>				  
+				      	<label>Descripton: </label><div class=""><input type="text" placeholder="edit description" [(ngModel)]="item.description" name="description"></div>				  
+
+			        	<button type="submit" value="Update Item" class="">Update Post</button>
+			        	<button (click)="deleteItem($event,item)"  class="">Delete Post</button>
+				      </div>
+				</form>
+			</div>
+
+		</li>
+
+  	</ul>
+
+  </div>
 
 
+<ng-template #noItems>
+	<hr>
+	<h5>There are no items to list</h5>
+
+</ng-template>
 
 
-
-
-
+<!--  -->
