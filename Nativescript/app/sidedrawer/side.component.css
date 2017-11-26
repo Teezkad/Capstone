@@ -12,9 +12,12 @@ button {
     margin: 10;
     horizontal-align: left;
 }
+.drawerContentButton:hover{
+    background-color: #414141;
+}
 
 .sideStackLayout {
-    background-color: gray;
+    background-color:#555;
 }
 
 .sideTitleStackLayout {
@@ -28,5 +31,5 @@ button {
 }
 
 .sideLightGrayLabel {
-    background-color: lightgray;
+    background-color: #555;
 }

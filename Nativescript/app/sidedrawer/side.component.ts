@@ -5,6 +5,7 @@ import { ActionItem } from "ui/action-bar";
 import { Observable } from "data/observable";
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-pro-ui/sidedrawer';
+import { TnsSideDrawer } from 'nativescript-sidedrawer';
 
 @Component({
     moduleId: module.id,
