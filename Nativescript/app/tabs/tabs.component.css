@@ -8,6 +8,14 @@ button {
     padding: 10;
 }
 
+.list-group-item{
+    padding: 50px;
+}
+
+.list-group-item-heading{
+    font-weight: bold;
+}
+
 .drawerContentButton {
     margin: 10;
     horizontal-align: left;
