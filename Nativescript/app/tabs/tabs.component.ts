@@ -1,20 +1,13 @@
 import {Component } from "@angular/core";
 import { Page } from "ui/page"; // to hide action bar
-<<<<<<< HEAD
-
+import * as listViewModule from "tns-core-modules/ui/list-view";
 class news{
   constructor(public id : string, public name: string){}
 }
-=======
-import * as listViewModule from "tns-core-modules/ui/list-view";
-
-
->>>>>>> tundefork/master
 
 @Component({
   selector: "tabs",
   templateUrl: "./tabs/tabs.component.html",
-<<<<<<< HEAD
 })
 export class tabsComponent {
   info: news[];
@@ -23,13 +16,8 @@ export class tabsComponent {
       {
         id: 'Random',
         name: 'Nuts'
-      }
+      },
+      {id: 'NEW NUT REMOVAL', name: 'DEEZ?!?!'}
     ]
   }
-=======
-  
-  
-})
-export class tabsComponent {
->>>>>>> tundefork/master
 }

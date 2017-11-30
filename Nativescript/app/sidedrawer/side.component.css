@@ -12,18 +12,9 @@ button {
     margin: 10;
     horizontal-align: left;
 }
-<<<<<<< HEAD
 
 .sideStackLayout {
     background-color: gray;
-=======
-.drawerContentButton:hover{
-    background-color: #414141;
-}
-
-.sideStackLayout {
-    background-color:#555;
->>>>>>> tundefork/master
 }
 
 .sideTitleStackLayout {
@@ -37,9 +28,5 @@ button {
 }
 
 .sideLightGrayLabel {
-<<<<<<< HEAD
     background-color: lightgray;
-=======
-    background-color: #555;
->>>>>>> tundefork/master
 }
