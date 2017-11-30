@@ -1,5 +1,13 @@
 <TabView>
     <StackLayout *tabItem="{title: 'News'}" >
+
+            <!-- <Page xmlns:lv="nativescript-pro-ui/listview">
+        
+                <lv:RadListView id="listview" class="list-group"> 
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate  [item] = 'info'> -->
                             <listview [item]= "info">
                                 <ng-template let-item="item">
                             <StackLayout class="list-group-item">
