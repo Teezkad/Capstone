@@ -1,5 +1,6 @@
 <TabView>
     <StackLayout *tabItem="{title: 'News'}" >
+<<<<<<< HEAD
             <!-- <Page xmlns:lv="nativescript-pro-ui/listview">
         
                 <lv:RadListView id="listview" class="list-group"> 
@@ -19,10 +20,21 @@
                     </lv:RadListView>
                 
             </Page> -->
+=======
+        <ListView [items]="items">
+            <ng-template let-item="item">
+                <Label [text]="item.itemDesc"></Label>
+            </ng-template>
+        </ListView>
+>>>>>>> tundefork/master
     </StackLayout>
     <StackLayout *tabItem="{title: 'Info'}">        
     </StackLayout>
     <StackLayout *tabItem="{title: 'Providers'}">
+<<<<<<< HEAD
         <Label text="Third ta"></Label>
+=======
+        <Label text="Third tab item"></Label>
+>>>>>>> tundefork/master
     </StackLayout>
 </TabView>

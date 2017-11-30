@@ -5,6 +5,10 @@ import { ActionItem } from "ui/action-bar";
 import { Observable } from "data/observable";
 import { RadSideDrawerComponent, SideDrawerType } from "nativescript-pro-ui/sidedrawer/angular";
 import { RadSideDrawer } from 'nativescript-pro-ui/sidedrawer';
+<<<<<<< HEAD
+=======
+import { TnsSideDrawer } from 'nativescript-sidedrawer';
+>>>>>>> tundefork/master
 
 @Component({
     moduleId: module.id,
