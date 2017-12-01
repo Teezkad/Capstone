@@ -1,3 +1,15 @@
 #topic{
 font-size: 20em;
 }
+
+#news{
+    overflow-y: scroll
+}
+
+#womantext{
+    text-decoration-color: black;
+    font-size: 30em;
+    font-weight: bold;
+    margin-left:30%;
+    margin-top: 20%;
+}
