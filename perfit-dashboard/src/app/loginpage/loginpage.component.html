@@ -15,12 +15,12 @@
       <form (submit)="loginUser($event)">
         <img src="home.png">
         <div class="input">
-          <label>Username</label><br/>
-          <input type="text"><br/><br/>
+          <label>Email</label><br/>
+          <input type="text" placeholder="email"><br/><br/>
         </div>
         <div class="input">
           <label>Password</label><br/>
-          <input type="password"><br/><br/>
+          <input type="password" placeholder="********"><br/><br/>
         </div>
         <div ng-if="errorMessage2" class="error">{{ errorMessage2 }}</div><br>
         <div ng-if="errorMessage" class="error">{{ errorMessage }}</div><br>
