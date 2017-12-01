@@ -1,25 +1,26 @@
 <TabView>
     <StackLayout *tabItem="{title: 'News'}" >
+<ListView [items]= "info" class = "list-group" [class.selected]="item === selectedInfo"(tap)="onSelect(item)">
+        <ng-template let-item="item" >
+                <StackLayout orientation="horizontal">
+                 <Image width="200px" height="300px" src="https://www.w3schools.com/images/w3schools_green.jpg" id = "image"></Image>
+                        
+            <StackLayout class="list-group-item" >
+                <Label [text]="item.Topic" class="list-group-item-heading" id = "topic"></Label>
+                <Label  [text]="item.author"  class="list-group-item-text" ></Label>
+                <Label  [text]="item.prev"  class="list-group-item-text" id = "prev"></Label>
+                </StackLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
 
-            <!-- <Page xmlns:lv="nativescript-pro-ui/listview">
-        
-                <lv:RadListView id="listview" class="list-group"> 
-                        <lv:RadListView.listViewLayout>
-                            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
-                        </lv:RadListView.listViewLayout>
-                        <lv:RadListView.itemTemplate  [item] = 'info'> -->
-                            <listview [item]= "info">
-                                <ng-template let-item="item">
-                            <StackLayout class="list-group-item">
-                                <Label [text]="item.name " class="list-group-item-heading" ></Label>
-                                <Label [text]=" item.id" textWrap="true" class="list-group-item-text" ></Label>
-                            </StackLayout>
-                        </ng-template>
-                        </listview>
-            <!-->trying to create a listview in the news tab. Just tryin to show an object created in 
-            components called info -->
+        <app-news-detail [item]="selectedInfo"></app-news-detail>
+
     </StackLayout>
-    <StackLayout *tabItem="{title: 'Info'}">        
+    <StackLayout *tabItem="{title: 'Info'}">   
+        <StackLayout>   
+         <Image src="/Nativescript/app/App_Resources/Android/LilBill.png"></Image>
+        </StackLayout>
     </StackLayout>
     <StackLayout *tabItem="{title: 'Providers'}">
         <Label text="Third tab item"></Label>
