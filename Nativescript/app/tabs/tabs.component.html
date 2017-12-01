@@ -1,0 +1,27 @@
+<TabView>
+    <StackLayout *tabItem="{title: 'News'}" >
+
+            <!-- <Page xmlns:lv="nativescript-pro-ui/listview">
+        
+                <lv:RadListView id="listview" class="list-group"> 
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate  [item] = 'info'> -->
+                            <ListView [items]= "info">
+                                <ng-template let-item="item">
+                            <StackLayout class="list-group-item">
+                                <Label [text]="item.id " class="list-group-item-heading" ></Label>
+                                <Label [text]=" item.name" textWrap="true" class="list-group-item-text" ></Label>
+                            </StackLayout>
+                        </ng-template>
+                    </ListView>
+            <!-->trying to create a listview in the news tab. Just tryin to show an object created in 
+            components called info -->
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Info'}">        
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Providers'}">
+        <Label text="Third tab item"></Label>
+    </StackLayout>
+</TabView>
