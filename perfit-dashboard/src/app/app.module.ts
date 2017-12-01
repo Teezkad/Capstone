@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UploaderComponent } from './uploader/uploader.component';
 import { LogoutComponent } from './logout/logout.component';
-
+import { UploadImageComponent } from './upload-image/upload-image.component';
 
 //services
 import { environment } from '../environments/environment';
@@ -21,8 +21,6 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 //guard
 import { AuthguardGuard } from './authguard.guard';
-
-
 
 //firebase modules
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -57,6 +55,11 @@ const appRoutes:Routes = [
     canActivate: [AuthguardGuard],
     component: UploaderComponent
   },
+   {
+    path: 'upload-image',
+    canActivate: [AuthguardGuard],
+    component: UploadImageComponent
+  },
   {
     path: 'logout',
     component: LogoutComponent
@@ -72,7 +75,8 @@ const appRoutes:Routes = [
     HeaderComponent,
     FooterComponent,
     UploaderComponent,
-    LogoutComponent
+    LogoutComponent,
+    UploadImageComponent,    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -13,25 +13,42 @@ import { Item } from '../models/item';
 
 export class UploaderComponent implements OnInit {
  
-   user='';
+   user:string;
+   msg = '';
+   msg2 = '';
+   date = new Date();
 
   item: Item = {
   	title: '',
   	description: '',
   }
 
+
   constructor(private itemService: ItemService,private cookieService:CookieService) {
     this.user = this.cookieService.get('username'); 
   }
 
   ngOnInit() {
+
   }
 
   onSubmit(){
-    if (this.item.title != '' && this.item.description != '') {
-       this.itemService.addItem(this.item);
-       this.item.title = ' ';
-       this.item.description = ' ';
+    this.msg = "";
+    
+    if(this.item.title == ''){
+      this.msg = "Please fill in the title";
+    }else if(this.item.description == ''){
+      this.msg = "Please fill in the Descripton";
+    }else if(this.item.permissions == null){
+      this.msg = "Please select the permissions";
+    }
+    else{
+       this.msg = "";
+       this.item.time = this.date+'';
+       this.item.adminposted = this.user;
+
+     this.msg2 = "Posted to firebase!";
+     this.itemService.addItem(this.item);
     }
 
   }

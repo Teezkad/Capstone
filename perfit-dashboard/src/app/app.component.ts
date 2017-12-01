@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',

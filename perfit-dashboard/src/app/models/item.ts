@@ -6,5 +6,6 @@ export interface Item{
 	permissions?:string;
 	time?:string;
 	datatype?:string;
+	file?:string;
 
 }

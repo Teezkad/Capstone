@@ -1,6 +1,7 @@
 <app-header></app-header>
 
  
+<body>
 <div class="container">
   <div class="">
     <h1 class=""> Create a new post</h1> 
@@ -9,23 +10,13 @@
 
       <div class="">
         <label>Title</label>
-        <input type="text" placeholder="Add title" [(ngModel)]="item.title" name="title">
+        <textarea type="text" placeholder="Add title" [(ngModel)]="item.title" name="title"></textarea>
       </div>
       
       <div class="">
         <label>Description</label>
-        <input type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description">
+        <textarea class="description" type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description"></textarea>
       </div>
-
-       <div class="">
-       <label>Datatype</label>
-       <select type="text" placeholder="Add Datatype" [(ngModel)]="item.datatype" name="datatype">
-       <option selected="selected" >None</option>
-       <option>PDF</option>
-       <option>Image - png</option>
-       <option>Image - jpg</option>
-       </select>
-       </div>
 
       <div class="">
        <label>Permissions</label>
@@ -34,29 +25,37 @@
        <option>Dentists/Doctors only</option>
        </select>
        </div>
-       
-        <div class="">
-        <label>Time</label>
-        <input type="text" placeholder="ex. 01/02/2017" [(ngModel)]="item.time" name="time">
-        </div>
-
-         <div class="">
-        <label>Posted by</label>
-        <input type="text" placeholder="Add title" [(ngModel)]="item.adminposted" name="title">
-        </div>
-       <!--
-       <label>Attachment</label>
+      
+       <!-- file type -->
+      <!--
        <div class="">
-       <input type="file" accept="image/*" [(ngModel)]="item.datatype" >
+       <label>Datatype</label>
+       <select type="text" placeholder="Add Datatype" [(ngModel)]="item.datatype"  name="datatype">
+       <option selected="selected" >None</option>
+       <option>PDF</option>
+       <option>Image - png</option>
+       <option>Image - jpg</option>
+       </select>
        </div>
-    
+      -->
+      
+       <!-- upload file -->
+       <!--
+        <label>Attachment</label>
+        <div class="">
+        <input type="file" accept="image/*" [(ngModel)]="item.file" id="file" >
+        </div>
+      -->
 
-      -->      
-  
-      <input type="submit">
-       
+         
+      <input type="submit" class="button">
+      <div id="message">{{msg}}</div>
+      <div id="message2">{{msg2}}</div>
+
     </form>
 
   </div>
 </div>
+
+</body>
 

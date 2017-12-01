@@ -16,7 +16,7 @@ export class ItemService{
 		//returns the collection as an observable
 		//this.items = this.afs.collection('items').valueChanges();
 
-		this.itemsCollection = this.afs.collection('items',ref => ref.orderBy('title','asc'));
+		this.itemsCollection = this.afs.collection('items',ref => ref.orderBy('time','desc'));
 
 		//this code returns the id vs top code doesnt
 		this.items = this.itemsCollection.snapshotChanges().map(changes =>{

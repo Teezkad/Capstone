@@ -1,30 +1,52 @@
 <app-header></app-header>
 
+<body>
 
   <div *ngIf="items?.length >0; else nItems">
   	<ul *ngFor="let item of items" class="collection">
   		<li class="collection-item">
-			<h1>{{ item.title }}</h1> 
-			<br> <b>Description: </b> {{ item.description }}
-			<br> <b>Postedby: </b> {{ item.adminposted }}
-			<br> <b>Datatype: </b> {{ item.datatype }}
-			<br> <b>Who can view: </b> {{ item.permissions }}
-			<br> <b>Posted on: </b> {{ item.time }}
-			<br> <b>Post id: </b> {{ item.id }}
-			<button  (click)="editItem($event, item)" >Edit</button>
-			<button (click)="clearState()"	class="">Hide</button>
-
-
+			
+			<h1 class="item-title">{{ item.title }}</h1> 
+			<br><h3><div class="description"> {{ item.description }}</div></h3>
+			<div class="info">
+				<!--<br> <b>Datatype: </b> {{ item.datatype }}-->
+				<br> <b>Postedby: </b> {{ item.adminposted }}
+				<!--<br> <b>File: </b> {{ item.file }} -->
+				<br> <b>Permissions: </b> {{ item.permissions }}
+				<br> <b>Posted on: </b> {{ item.time }}
+				<br> <b>Post id: </b> {{ item.id }}
+				<div class="buttons">
+					<button  class="button" (click)="editItem($event, item)" >Edit</button>
+					<button  class="button"	(click)="clearState()"	>Hide</button>
+				</div>
+			</div>
 			<div *ngIf="editState && itemToEdit.id == item.id" >
 				<form (ngSubmit)="updateItem(item)"	>
-					<div class="">
+					<div class="editthis">
+				        <b>Title:</b> 
+				        <input type="text" placeholder="edit title" [(ngModel)]="item.title" name="title"><br>			  
+				    </div> 	
+				    <div class="editthis">
+				      <b>Descripton:</b>
+				      	<textarea class="description" type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description"></textarea>		
+				    </div>  
+				    <div class="editthis">
+       					<b>Permissions:</b>
+					       <select type="text" placeholder="Add Datatype" [(ngModel)]="item.permissions" name="permissions">
+       						<option selected="selected" >Everyone</option>
+      						<option>Dentists/Doctors only</option>
+       					   </select>
+       				</div>
 
-				        <label>Title: </label><div class=""><input type="text" placeholder="edit title" [(ngModel)]="item.title" name="title"></div>				  
-				      	<label>Descripton: </label><div class=""><input type="text" placeholder="edit description" [(ngModel)]="item.description" name="description"></div>				  
 
-			        	<button type="submit" value="Update Item" class="">Update Post</button>
+
+
+				      	<br>
+			        	<div class="buttons">
+						<button type="submit" value="Update Item" class="">Update Post</button>
 			        	<button (click)="deleteItem($event,item)"  class="">Delete Post</button>
-				      </div>
+			        	</div>
+			        	
 				</form>
 			</div>
 
@@ -33,7 +55,7 @@
   	</ul>
 
   </div>
-
+</body>
 
 <ng-template #noItems>
 	<hr>
@@ -41,5 +63,3 @@
 
 </ng-template>
 
-
-<!--  -->
